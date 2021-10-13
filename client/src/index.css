@@ -72,7 +72,14 @@ section {
   /* text-transform: uppercase; */
   letter-spacing: 2px;
 }
-
+.dropdown-toggle{
+  border: 0px solid black !important;
+  background-color: #fa9e2c !important;
+}
+.dropdown-toggle:hover{
+  border: 0px solid black !important;
+  background-color: var(--purple-light) !important;
+}
 /* Homepage */
 .smallimg{
   height: 200px !important;
