@@ -6,10 +6,11 @@ import {BrowserRouter, Route} from 'react-router-dom'
 import Homescreen from "./screens/Homescreen";
 import Registerscreen from "./screens/Registerscreen";
 import Loginscreen from './screens/Loginscreen';
+import Bookingscreen from './screens/Bookingscreen';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <BrowserRouter>
         
         <Navbar/>
@@ -17,7 +18,7 @@ function App() {
         <Route path= "/register" exact component={Registerscreen}/>
         <Route path= "/login" exact component={Loginscreen}/>
         <Route path= "/homepage1" exact component={Homepage1screen}/>
-
+        <Route path= "/book/:roomid" exact component={Bookingscreen}/>
       </BrowserRouter>
     </div>
   );
