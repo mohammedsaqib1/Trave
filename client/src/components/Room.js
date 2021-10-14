@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import {Link} from 'react-router-dom'
 import { Modal, Button, Carousel} from 'react-bootstrap'
-function Room({ room }) {
+function Room({ room , fromdate , todate}) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -20,7 +20,7 @@ function Room({ room }) {
             <p>Type : {room.type}</p>
           </b>
           <div style={{ float: "right" }}>
-            <Link to={`/book/${room._id}`}>
+            <Link to={`/book/${room._id}/${fromdate}/${todate}`}>
               <button className="btn btn-gradient btn-lg m-2">Book Now</button>
             </Link>
             <button className="btn btn-gradient btn-lg" onClick={handleShow}>

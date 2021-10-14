@@ -41,13 +41,13 @@ async function Login(){
                     <div className="boxshadow">
                         <h2 className="h2-register">Login</h2>
 
-                        <input style={{fontSize:'1.6rem'}} type="email" className="form-control" placeholder="Email"
+                        <input style={{fontSize:'1.6rem'}} type="email" className="form-control mb-2" placeholder="Email"
                         value={email} onChange={(e)=>{setemail(e.target.value)}}
                         />
-                        <input style={{fontSize:'1.6rem'}} type="text" className="form-control" placeholder="Password"
+                        <input style={{fontSize:'1.6rem'}} type="text" className="form-control mb-2" placeholder="Password"
                         value={password} onChange={(e)=>{setpassword(e.target.value)}}
                         />
-                    <button className="btn btn-lg btn-gradient mt-5" onClick={Login}>
+                    <button className="btn btn-lg btn-gradient mt-4" onClick={Login}>
                         Login
                     </button>
                     </div>

@@ -10,10 +10,6 @@ const roomSchema = mongoose.Schema({
         type: Number ,
         required: true
     },
-    phoneNumber : {
-        type : Number ,
-        required: true
-    },
     rentperday : {
         type: String ,
         required: true

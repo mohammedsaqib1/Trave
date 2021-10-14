@@ -2,17 +2,30 @@ import React, { useState, useEffect } from 'react'
 import axios from "axios";
 import Loader from '../components/Loader'
 import Error from "../components/Error";
+import moment from 'moment'
 
 function Bookingscreen({match}) {
     const [loading, setloading] = useState(true);
     const [error, setError] = useState();
     const [room, setroom] = useState();
 
+    const roomid = match.params.roomid
+    const fromdate = moment(match.params.fromdate,'DD-MM-YYYY');
+    const todate = moment(match.params.todate,'DD-MM-YYYY');
+
+    const totaldays = 1 + Math.ceil((todate - fromdate) / (1000 * 60 * 60 * 24));
+    const [totalamount , settotalamount] = useState()
+
     useEffect(async () => {
         try {
             setloading(true);
-            const data = (await axios.post("/api/rooms/getroombyid", { roomid: match.params.roomid })).data;
+            const data = (
+                await axios.post("/api/rooms/getroombyid", 
+                { roomid: match.params.roomid 
+            })
+            ).data;
 
+            settotalamount(data.rentperday * totaldays)
             setroom(data);
             setloading(false);
         } catch (error) {
@@ -21,6 +34,23 @@ function Bookingscreen({match}) {
         }
 
     }, []);
+
+    async function bookRoom(){
+        const bookingDetails = {
+            room,
+            userid:JSON.parse(localStorage.getItem('currentUser'))._id,
+            fromdate,
+            todate,
+            totalamount,
+            totaldays
+        }
+
+        try {
+            const result = await axios.post('/api/bookings/bookroom' , bookingDetails)
+        } catch (error) {
+            
+        }
+    }
 
     return(
         <div className="m-5">
@@ -36,9 +66,9 @@ function Bookingscreen({match}) {
                             <h1>Booking Details</h1>
                             <hr />
                             <b>
-                                <p>Name : </p>
-                                <p>From Date : </p>
-                                <p>To Date : </p>
+                                <p>Name : {JSON.parse(localStorage.getItem('currentUser')).name}</p>
+                                <p>From Date : {match.params.fromdate} </p>
+                                <p>To Date : {match.params.todate} </p>
                                 <p>Max Count : {room.maxcount}</p>
                             </b>
                         </div>
@@ -46,14 +76,14 @@ function Bookingscreen({match}) {
                             <b>
                                 <h1>Amount</h1>
                                 <hr />
-                                <p>Total Days : </p>
+                                <p>Total Days : {totaldays} </p>
                                 <p>Rent Per Day : {room.rentperday}</p>
-                                <p>Total Amount : </p>
+                                <p>Total Amount : {totalamount}</p>
                             </b>
                         </div>
                         <div>
                             <button style={{ float: "right" }}
-                                className="btn btn-gradient btn-lg " >
+                                className="btn btn-gradient btn-lg " onClick={bookRoom} >
                                 Pay Now
                             </button>
                         </div>
@@ -67,9 +97,3 @@ function Bookingscreen({match}) {
 }
 
 export default Bookingscreen
-//     
-
-//     return (
-        
-
-//     )

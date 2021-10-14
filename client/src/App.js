@@ -1,4 +1,4 @@
-// import { route } from "../../routes/roomsRoute";
+// import { route } from "./routes/roomsRoute";
 import "./App.css";
 import Homepage1screen from "./screens/Homepage1screen";
 import Navbar from "./components/Navbar";
@@ -18,7 +18,7 @@ function App() {
         <Route path= "/register" exact component={Registerscreen}/>
         <Route path= "/login" exact component={Loginscreen}/>
         <Route path= "/homepage1" exact component={Homepage1screen}/>
-        <Route path= "/book/:roomid" exact component={Bookingscreen}/>
+        <Route path= "/book/:roomid/:fromdate/:todate" exact component={Bookingscreen}/>
       </BrowserRouter>
     </div>
   );

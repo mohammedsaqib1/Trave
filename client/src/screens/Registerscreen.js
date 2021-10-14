@@ -58,19 +58,19 @@ async function register(){
                     {success && (<Success message='Registration Successful'/>)}
                     <div className="boxshadow">
                         <h2 className="h2-register">Register</h2>
-                        <input style={{fontSize:'1.6rem'}} type="text" className="form-control" placeholder="Name" 
+                        <input style={{fontSize:'1.6rem'}} type="text" className="form-control mb-2" placeholder="Name" 
                         value={name} onChange={(e)=>{setname(e.target.value)}}
                         />
-                        <input style={{fontSize:'1.6rem'}} type="email" className="form-control" placeholder="Email"
+                        <input style={{fontSize:'1.6rem'}} type="email" className="form-control mb-2" placeholder="Email"
                         value={email} onChange={(e)=>{setemail(e.target.value)}}
                         />
-                        <input style={{fontSize:'1.6rem'}} type="password" className="form-control" placeholder="Password"
+                        <input style={{fontSize:'1.6rem'}} type="password" className="form-control mb-2" placeholder="Password"
                         value={password} onChange={(e)=>{setpassword(e.target.value)}}
                         />
-                        <input style={{fontSize:'1.6rem'}} type="password" className="form-control" placeholder="Confirm Password"
+                        <input style={{fontSize:'1.6rem'}} type="password" className="form-control mb-2" placeholder="Confirm Password"
                         value={cpassword} onChange={(e)=>{setcpassword(e.target.value)}}
                         />
-                    <button className="register-btn btn-gradient mt-5" onClick={register}>
+                    <button className="btn btn-lg btn-gradient mt-4" onClick={register}>
                         Register
                     </button>
                     </div>
