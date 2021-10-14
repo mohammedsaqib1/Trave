@@ -169,3 +169,8 @@ input{
   cursor: pointer;
   transition: .3s;
 }
+
+/* Homescreen.js */
+.ant-picker {
+  width: 30rem !important;
+}

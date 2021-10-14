@@ -16,13 +16,13 @@ function Room({ room , fromdate , todate}) {
           <b>
             <h1>{room.name}</h1>
             <p>Max count : {room.maxcount}</p>
-            <p>Phone Number : {room.phonenumber}</p>
             <p>Type : {room.type}</p>
           </b>
           <div style={{ float: "right" }}>
+          {(fromdate && todate) && (
             <Link to={`/book/${room._id}/${fromdate}/${todate}`}>
               <button className="btn btn-gradient btn-lg m-2">Book Now</button>
-            </Link>
+            </Link>)}
             <button className="btn btn-gradient btn-lg" onClick={handleShow}>
               View Details
             </button>
