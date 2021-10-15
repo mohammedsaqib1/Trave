@@ -174,3 +174,11 @@ input{
 .ant-picker {
   width: 30rem !important;
 }
+
+/* Booking screen */
+.pay-now-btn{
+  size: xlg !important;
+  padding: 13px 30px;
+    font-size: 18px;
+    line-height: normal;
+}

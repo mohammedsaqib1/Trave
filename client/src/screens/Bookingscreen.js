@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios";
+import StripeCheckout from 'react-stripe-checkout';
 import Loader from '../components/Loader'
 import Error from "../components/Error";
 import moment from 'moment'
+import { FunctionsRounded } from '@mui/icons-material';
 
 function Bookingscreen({match}) {
     const [loading, setloading] = useState(true);
@@ -35,21 +37,25 @@ function Bookingscreen({match}) {
 
     }, []);
 
-    async function bookRoom(){
+async function onToken(token){
+
+        console.log(token);
         const bookingDetails = {
             room,
             userid:JSON.parse(localStorage.getItem('currentUser'))._id,
             fromdate,
             todate,
             totalamount,
-            totaldays
-        }
+            totaldays,
+            token
+        };
 
         try {
             const result = await axios.post('/api/bookings/bookroom' , bookingDetails)
         } catch (error) {
             
         }
+    
     }
 
     return(
@@ -82,10 +88,18 @@ function Bookingscreen({match}) {
                             </b>
                         </div>
                         <div>
+                            
+                            <StripeCheckout
+                            amount={totalamount*100}
+                            token={onToken}
+                            currency='INR'
+                            stripeKey="pk_test_51Jk5DnSIXQi3PHtzzvUkgpCwyvANKFWIq46FBnmNJtvLDDscXfMkVKSb2NoP6ysNJuJ4HHm7yyqyNiVaofeKghnH00p4PUQm50"
+                            >
                             <button style={{ float: "right" }}
-                                className="btn btn-gradient btn-lg " onClick={bookRoom} >
-                                Pay Now
+                            className="btn btn-gradient mt-5 pay-now-btn">
+                            Pay Now
                             </button>
+                            </StripeCheckout>
                         </div>
                     </div>
                 </div>
