@@ -49,7 +49,7 @@ function Room({ room , fromdate , todate}) {
             <p>{room.description}</p>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
+            <Button variant="secondary" className="btn" onClick={handleClose}>
               Close
             </Button>
           </Modal.Footer>

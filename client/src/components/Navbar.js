@@ -9,7 +9,7 @@ function Navbar() {
   return (
     <div>
       <nav class="navbar header">
-        <a class="navbar-brand logo" href="/">
+        <a class="navbar-brand logo" href="/home">
           <img src={imagelogo} alt="logo" />
         </a>
         <nav class="navbar navbar-expand-lg">
@@ -29,11 +29,11 @@ function Navbar() {
             <ul class="navbar-nav mr-5">
             {user ? (<>
                 <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button class="btn btn-gradient dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-user mr-2"></i>{user.name}
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="/bookings">Bookings</a>
+                    <a class="dropdown-item" href="/profile">Profile</a>
                     <a class="dropdown-item" href="#" onClick={logout}>Logout</a>
                   </div>
                 </div>

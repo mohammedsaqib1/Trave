@@ -19,6 +19,9 @@ function Bookingscreen({match}) {
     const [totalamount , settotalamount] = useState()
 
     useEffect(async () => {
+        if(!localStorage.getItem('currentUser')){
+            window.location.reload='/login'
+        }
         try {
             setloading(true);
             const data = (
@@ -57,7 +60,7 @@ async function onToken(token){
             Swal.fire(
                 'Congratulations!','Your Room Booked Successfully','success'
             ).then(result=>{
-                window.location.href='/bookings'
+                window.location.href='/profile'
             })
         } catch (error) {
             Swal.fire(

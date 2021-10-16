@@ -63,7 +63,7 @@ section {
   padding-left: 0.5rem;
 }
 .navbar {
-  background-color: var(--purple-solid);
+  background-color: var(--purple-transparent);
 }
 .nav-link {
   color: white !important;
@@ -71,15 +71,13 @@ section {
   /* font-weight: bold; */
   /* text-transform: uppercase; */
   letter-spacing: 2px;
+  background-color: none !important;
 }
-.dropdown-toggle{
-  border: 0px solid black !important;
-  background-color: #fa9e2c !important;
+.collapse .navbar-collapse{
+  background-color: none !important;
 }
-.dropdown-toggle:hover{
-  border: 0px solid black !important;
-  background-color: var(--purple-light) !important;
-}
+
+
 /* Homepage */
 .smallimg{
   height: 200px !important;
@@ -141,10 +139,10 @@ section {
   padding: 10px;
   text-align: center;
 }
-input{
+input , select , .ant-picker{
   box-shadow: none !important;
-  width: 100%;
-  height: 100%;
+  width: 100% !important;
+  /* height: 100%; */
   border: 2px solid var(--yellow-solid) !important;
   padding: 10px 20px !important;
   font-size: 1rem;
@@ -152,6 +150,14 @@ input{
   background: transparent;
   margin-top: 5px;
   margin-bottom: 5px;
+  height: 35px !important;
+
+}
+.ant-picker-input input {
+  border: none !important;
+}
+p{
+  font-size: 16px !important
 }
 /* -->register btn */
 .register-btn {
@@ -181,4 +187,85 @@ input{
   padding: 13px 30px;
     font-size: 18px;
     line-height: normal;
+}
+
+/*  Profile  */
+/* .ant-tabs-tab-btn{
+  color: var(--purple-solid) !important;
+}
+
+.ant-tabs-tab-active{
+  color: var(--purple-light) !important;
+}
+.ant-tabs-tab{
+  color: var(--purple-light) !important;
+} */
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn  {
+  color: var(--yellow-solid) !important; 
+  font-weight: 500;
+}
+
+/* Landing */
+
+.landing{
+  height: 100vh;
+  background : url("./images/hero_background.jpg") center no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 0;
+}
+
+.landing::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  background-color: var(--purple-transparent-alt) !important;
+  z-index: -1;
+}
+
+.container-landing{
+  width: 100;
+  max-width: 120rem;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+
+.main-heading-landing{
+  color: white !important;
+  line-height: 1;
+  text-shadow: 1px 1px 1rem rgba(0, 0, 0, .5);
+  margin-bottom: 2.5rem;
+}
+.title-landing{
+  font-size: 4.8rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.h1-landing{
+  color:white !important;
+  padding: left 0;
+  font-size: 4.8rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.subtitle-landing{
+  color:white !important;
+  font-size: 2.3rem; 
+  font-weight : 300;
+  font-family : 'Courgette', cursive;
+  padding-top : 20px;
+}
+
+.subtitle1-landing{
+color:white !important;
+font-size: 3.9rem;
+font-weight: 300;
+font-family: 'Courgette', cursive;
 }
