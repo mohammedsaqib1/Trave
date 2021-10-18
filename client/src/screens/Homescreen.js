@@ -90,7 +90,7 @@ function Homescreen() {
   }
 
   return (
-    <div className="container">
+    <div className="container" style={{paddingTop:'80px'}}>
       
       <div className="row mt-5 boxshadow" style={{display: 'block'}}>
         <div style={{  display: 'flex',
@@ -119,7 +119,7 @@ function Homescreen() {
           <Loader/>
         ) : (
           rooms.map((room) => {
-            return <div className="col-md-9 mt-2">
+            return <div className="col-md-12 mt-2 w-100">
                 <Room room={room} fromdate={fromdate} todate={todate}/>
             </div>;
           })

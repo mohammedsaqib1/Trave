@@ -33,7 +33,7 @@ async function Login(){
 
 }
     return (
-        <div>
+        <div className="landing-login-reg">
             {loading && (<Loader/>)}
             <div className="row justify-content-center mt-5">
                 <div className="col-md-5 mt-5">

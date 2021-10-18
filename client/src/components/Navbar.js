@@ -7,12 +7,12 @@ function Navbar() {
     window.location.href='/login'
   }
   return (
-    <div>
-      <nav class="navbar header">
-        <a class="navbar-brand logo" href="/home">
+    <div style={{position:'absolute',zIndex:'5'}}>
+      <nav class="navbar header sticky">
+        <a class="navbar-brand logo" href="/">
           <img src={imagelogo} alt="logo" />
         </a>
-        <nav class="navbar navbar-expand-lg">
+        <nav style={{backgroundColor:'transparent'}} class="navbar navbar-expand-lg">
             <button
             class="navbar-toggler"
             type="button"
@@ -25,7 +25,7 @@ function Navbar() {
             <span class="navbar-toggler-icon" > <i class="fa fa-bars" style={{color: 'white'}} ></i> </span>
           
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
+          <div style={{backgroundColor:'transparent'}} class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-5">
             {user ? (<>
                 <div class="dropdown">

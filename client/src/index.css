@@ -54,9 +54,16 @@ section {
   padding: 5rem;
 }
 /* *******************************NAVBAR CSS */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 .logo img {
-  max-width: 80%;
-  padding-left: 20px;
+  max-width: 90%;
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .navbar-expand-lg .navbar-nav .nav-link {
   padding-right: 1.5rem;
@@ -78,7 +85,7 @@ section {
 }
 
 
-/* Homepage */
+/* Homescreen */
 .smallimg{
   height: 200px !important;
   width: 100% !important;
@@ -126,14 +133,36 @@ section {
 /* -->box shadow */
 
 .boxshadow{
-  box-shadow: var(--yellow-solid) 0px 1px 1px, var(--yellow-solid) 0px 0px 0px 2px;
-  margin-top: 20px !important;
-  border-radius: 5px !important;
-  padding: 20px !important;
-  background: transparent;
+  /* box-shadow:  0px 1px 1px, var(--yellow-solid) 0px 0px 0px 2px; */
+box-shadow: var(--purple-transparent) 0px 5px 15px;
+
+margin-top: 20px !important;
+border-radius: 5px !important;
+padding: 20px !important;
+background: transparent;
 }
 
-/* Register.css */
+/* Register.css & login*/
+.landing-login-reg{
+  height: 100vh;
+  background : url("./images/hero_background.jpg") center no-repeat;
+  background-size: cover;
+  /* display:flex; */
+  align-items: center !important;
+  text-align: center !important;
+  position: relative;
+  z-index: 0;
+}
+.landing-login-reg::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  background-color: var(--purple-transparent-alt) !important;
+  z-index: -1;
+}
 .h2-register{
   font-size: 30px !important;
   padding: 10px;
@@ -239,14 +268,19 @@ p{
 
 .main-heading-landing{
   color: white !important;
-  line-height: 1;
-  text-shadow: 1px 1px 1rem rgba(0, 0, 0, .5);
-  margin-bottom: 2.5rem;
+  /* line-height: 1; */
+  text-shadow: 1px 1px 1rem rgba(0, 0, 0, .5) !important;
+  /* margin-bottom: 0rem !important; */
 }
 .title-landing{
-  font-size: 4.8rem;
+  font-size: 12rem !important;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 5px !important;
+  font-weight:bold !important;
+  font-family: 'Open Sans', sans-serif !important;
+  text-shadow: 1px 1px 1rem rgba(0, 0, 0, .5) !important;
+
+
 }
 .h1-landing{
   color:white !important;
@@ -268,4 +302,17 @@ color:white !important;
 font-size: 3.9rem;
 font-weight: 300;
 font-family: 'Courgette', cursive;
+}
+
+.btn-landing{
+  padding: 10px 32px;
+  text-align: center;
+  font-weight: bolder;
+  font-size:medium;
+}
+
+.dots{
+  font-size: 2rem;
+  margin-left: .5rem;
+  opacity: .75;
 }

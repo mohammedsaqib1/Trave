@@ -50,7 +50,7 @@ async function register(){
 }
 
     return (
-        <div>
+        <div className="landing-login-reg">
             {loading && (<Loader/>)}
             {error && (<Error/>)}
             <div className="row justify-content-center mt-5">
