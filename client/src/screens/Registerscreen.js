@@ -53,30 +53,30 @@ async function register(){
         <div className="landing-login-reg">
             {loading && (<Loader/>)}
             {error && (<Error message='Invalid Credintials'/>)}
-            <div className="row justify-content-center mt-5 pt-5">
-                <div className="col-md-5 pt-5">
+            {/* <div className="row justify-content-center pr-4"> */}
+                <div className="col-md-12 reg input-reg-log">
                     {success && (<Success message='Registration Successful'/>)}
                     <div className="boxshadow" style={{backgroundColor:'white'}}>
                         <h2 className="h2-register">Register</h2>
-                        <input style={{fontSize:'1.6rem'}} type="text" className="form-control mb-2" placeholder="Name" 
+                        <input style={{fontSize:'1.6rem'}} type="text" className="form-control mt-3 mb-2" placeholder="Name" 
                         value={name} onChange={(e)=>{setname(e.target.value)}}
                         />
-                        <input style={{fontSize:'1.6rem'}} type="email" className="form-control mb-2" placeholder="Email"
+                        <input style={{fontSize:'1.6rem'}} type="email" className="form-control mt-3 mb-2" placeholder="Email"
                         value={email} onChange={(e)=>{setemail(e.target.value)}}
                         />
-                        <input style={{fontSize:'1.6rem'}} type="password" className="form-control mb-2" placeholder="Password"
+                        <input style={{fontSize:'1.6rem'}} type="password" className="form-control mt-3 mb-2" placeholder="Password"
                         value={password} onChange={(e)=>{setpassword(e.target.value)}}
                         />
-                        <input style={{fontSize:'1.6rem'}} type="password" className="form-control mb-2" placeholder="Confirm Password"
+                        <input style={{fontSize:'1.6rem'}} type="password" className="form-control mt-3 mb-2" placeholder="Confirm Password"
                         value={cpassword} onChange={(e)=>{setcpassword(e.target.value)}}
                         />
-                    <button className="btn btn-lg btn-gradient mt-4" onClick={register}>
+                    <button className="btn btn-lg btn-gradient mt-4 form-control justify-content-center" style={{fontSize:'20px' , marginBottom:'20px'}} onClick={register}>
                         Register
                     </button>
                     </div>
                     
                 </div>    
-            </div> 
+            {/* </div>  */}
         </div>
     )
 }

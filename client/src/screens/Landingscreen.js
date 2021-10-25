@@ -16,7 +16,7 @@ function Landingscreen() {
           <h2 data-aos="zoom-out" class="subtitle1-landing mb-5">Affordable Rooms</h2>
           <h6 data-aos="zoom-out-left" style={{paddingTop :'0'}} class="subtitle-landing">"Our services are the Best."</h6>
        
-        <Link to="/home">
+        <Link to="/login">
           <button className="btn btn-gradient btn-landing mt-5">Get Started
           <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
           </button>
