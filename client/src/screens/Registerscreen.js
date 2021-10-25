@@ -52,11 +52,11 @@ async function register(){
     return (
         <div className="landing-login-reg">
             {loading && (<Loader/>)}
-            {error && (<Error/>)}
-            <div className="row justify-content-center mt-5">
-                <div className="col-md-5">
+            {error && (<Error message='Invalid Credintials'/>)}
+            <div className="row justify-content-center mt-5 pt-5">
+                <div className="col-md-5 pt-5">
                     {success && (<Success message='Registration Successful'/>)}
-                    <div className="boxshadow">
+                    <div className="boxshadow" style={{backgroundColor:'white'}}>
                         <h2 className="h2-register">Register</h2>
                         <input style={{fontSize:'1.6rem'}} type="text" className="form-control mb-2" placeholder="Name" 
                         value={name} onChange={(e)=>{setname(e.target.value)}}

@@ -58,7 +58,8 @@ async function onToken(token){
             const result = await axios.post('/api/bookings/bookroom' , bookingDetails)
             setloading(false);
             Swal.fire(
-                'Congratulations!','Your Room Booked Successfully','success'
+                'Congratulations!','Your Room Booked Successfully','success',
+                
             ).then(result=>{
                 window.location.href='/profile'
             })
@@ -71,10 +72,10 @@ async function onToken(token){
     }
 
     return(
-        <div className="m-5">
+        <div className="m-5 booking">
 
             {loading ? (<Loader/>) : room ? (<div>
-                <div className="row justify-content-center mt-5 boxshadow" >
+                <div className="row justify-content-center boxshadow" >
                     <div className="col-md-6" >
                         <h1>{room.name}</h1>
                         <img src={room.imageurls[0]} className="bigimg" ></img>

@@ -4,10 +4,9 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
 AOS.init({
-  duration:3000
+  duration:5000
 });
 
-// import background from "../images/hero_background.jpg";
 function Landingscreen() {
   return (
     <div class="landing">

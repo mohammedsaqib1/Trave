@@ -21,8 +21,8 @@ function Profilescreen() {
     }, [])
 
     return (
-        <div className="ml-3 mt-3">
-            <Tabs defaultActiveKey="1" >
+        <div className="ml-3 mt-5 pb-5 pt-5">
+            <Tabs defaultActiveKey="1" className="mt-5">
                 <TabPane tab="Profile" key="1">
                     <h1>My Profile</h1>
                     <br/>
@@ -87,7 +87,7 @@ export function MyBookings(){
     return(
         <div>
             <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-6 pl-5 pb-5">
                     {loading && (<Loader/>)}
                     {bookings && (bookings.map(booking=>{
                         return <div className="boxshadow">

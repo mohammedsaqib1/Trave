@@ -33,18 +33,21 @@ async function Login(){
 
 }
     return (
-        <div className="landing-login-reg">
+        <div 
+        className="landing-login-reg"
+        style={{}}
+        >
             {loading && (<Loader/>)}
-            <div className="row justify-content-center mt-5">
+            <div className="row justify-content-center mt-5 pt-5">
                 <div className="col-md-5 mt-5">
                     {error && (<Error message='Invalid Credintials'/>)}
-                    <div className="boxshadow">
+                    <div className="boxshadow" style={{backgroundColor:'white'}}>
                         <h2 className="h2-register">Login</h2>
 
                         <input style={{fontSize:'1.6rem'}} type="email" className="form-control mb-2" placeholder="Email"
                         value={email} onChange={(e)=>{setemail(e.target.value)}}
                         />
-                        <input style={{fontSize:'1.6rem'}} type="text" className="form-control mb-2" placeholder="Password"
+                        <input style={{fontSize:'1.6rem'}} type="password" className="form-control mb-2" placeholder="Password"
                         value={password} onChange={(e)=>{setpassword(e.target.value)}}
                         />
                     <button className="btn btn-lg btn-gradient mt-4" onClick={Login}>
