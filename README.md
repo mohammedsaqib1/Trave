@@ -3,7 +3,7 @@ Mini Project SEM-V
 
 #LANDING PAGE
 <br>
-<a href="https://drive.google.com/uc?export=view&id=1bPJr4NryVcNUGUmSmV1eNq_wtu4F8r6D"><img src="https://drive.google.com/uc?export=view&id=1bPJr4NryVcNUGUmSmV1eNq_wtu4F8r6D" title="Login Page" />
+<a href="https://drive.google.com/uc?export=view&id=16pnqCnNYPaG9GzBD3Y7SdQvpk00knrOw"><img src="https://drive.google.com/uc?export=view&id=16pnqCnNYPaG9GzBD3Y7SdQvpk00knrOw" title="Login Page" />
 <br>
 
 #1 LOGIN PAGE
